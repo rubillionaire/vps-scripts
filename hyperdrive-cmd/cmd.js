@@ -89,7 +89,7 @@ if (argv._[0] === 'import') {
     console.log(`hyper://${drive.key.toString('hex')}`)
   })
 } else if (argv._[0] === 'share') {
-  var drive = new Hyperdrive(argv.o || argv._[1] || '.hyperdrive')
+  var drive = new Hyperdrive(argv.o || argv._[1] || '.hyperdrive', argv.key)
   drive.once('ready', function () {
     console.log(`hyper://${drive.key.toString('hex')}`)
     var swarm = require('hyperswarm')()
